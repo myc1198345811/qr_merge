@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuchuheng\QrMerge;
+namespace MYC\QrMerge;
 
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Response\QrCodeResponse;
@@ -65,13 +65,13 @@ class QrMerge
         imagedestroy($qrcodeImg);
         $imgbinary = fread(fopen($file_path, "r"), filesize($file_path));
         return $imgbinary;
-       
+
     }
-    
+
     public function toBase64($imgbinary, $type)
     {
         $base64_file = 'data:image/' . $type . ';base64,' . base64_encode($imgbinary);
-        return $base64_file; 
+        return $base64_file;
     }
-    
+
 }
